@@ -5,7 +5,7 @@ Este es un ejemplo de como se puede abstraer
 los detalles de una implementacion al momento de 
 escribir tests.
 
-El objetivo de este ejemplo es que pueda extrapolarlo
+El objetivo de este ejemplo es que puedan extrapolarlo
 al problema de loggers que ustedes mismos deben testear.
 
 El ejemplo es simple, se trata de un modulo que envia 
