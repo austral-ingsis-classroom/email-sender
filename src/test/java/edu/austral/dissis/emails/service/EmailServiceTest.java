@@ -16,7 +16,8 @@ class EmailServiceTest {
 
     TestEmailSender emailSender = new TestEmailSender();
     EmailService emailService = new EmailServiceImpl(emailSender);
-    final SendEmailResult result = emailService.sendEmail(toEmail, "Hello %s, welcome to the system!", List.of("John"));
+    final SendEmailResult result =
+        emailService.sendEmail(toEmail, "Hello %s, welcome to the system!", List.of("John"));
 
     assertTrue(result.isSuccessful());
     assertEquals("Hello John, welcome to the system!", emailSender.getLastEmailSent());
@@ -27,10 +28,11 @@ class EmailServiceTest {
 
     TestEmailSender emailSender = new TestEmailSender();
     EmailService emailService = new EmailServiceImpl(emailSender);
-    final SendEmailResult result = emailService.sendEmail(
-        toEmail,
-        "Hello %s, welcome to the system! Your username is %s",
-        List.of("John", "john123"));
+    final SendEmailResult result =
+        emailService.sendEmail(
+            toEmail,
+            "Hello %s, welcome to the system! Your username is %s",
+            List.of("John", "john123"));
 
     assertTrue(result.isSuccessful());
     assertEquals(
@@ -43,7 +45,9 @@ class EmailServiceTest {
 
     TestEmailSender emailSender = new TestEmailSender();
     EmailService emailService = new EmailServiceImpl(emailSender);
-    final SendEmailResult result = emailService.sendEmail(toEmail, "Hello %s, your account balance is $%d", List.of("John", 100));
+    final SendEmailResult result =
+        emailService.sendEmail(
+            toEmail, "Hello %s, your account balance is $%d", List.of("John", 100));
 
     assertTrue(result.isSuccessful());
     assertEquals("Hello John, your account balance is $100", emailSender.getLastEmailSent());
